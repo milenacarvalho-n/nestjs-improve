@@ -1,7 +1,11 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { CoursesService } from './services/courses.service';
 
 @Controller('courses')
 export class CoursesController {
+    // O readonly garante a Imutabilidade: em seu conceito mais simples é algo que não pode ser alterado
+    constructor(private readonly courseService: CoursesService){}
+
     @Get()
     findAll(){
         return "Listagem de cursos";
