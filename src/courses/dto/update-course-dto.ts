@@ -13,3 +13,7 @@ export class UpdateCourseDTO {
     @IsOptional()
     readonly tags?: string[];
 }
+
+
+// Posso utilizar desta format, utilizando a lib import { PartialType } from "@nestjs/mapped-types";
+// export class UpdateCourseDTO extends PartialType(CreateCourseDTO) {} (Classe da qual se estende)
