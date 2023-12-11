@@ -4,15 +4,18 @@ import { Course } from 'src/courses/entities/courses.entity';
 import { Tag } from 'src/courses/entities/tags.entity';
 import { DataSourceOptions } from 'typeorm';
 
+require('dotenv').config()
+
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  username: 'postgres',
-  password: 'docker',
-  database: 'devtraining',
+  host: process.env.HOST,
+  port: Number(process.env.PORT),
+  username: String(process.env.USERNAME),
+  password: String(process.env.PASSWORD),
+  database: String(process.env.DBNAME),
   entities: [Course, Tag],
-  synchronize: true,
+  // nunca utilizar em produção como true: os dados serão apagados e recriados a cada reinicialização do servidor
+  synchronize: false,
 };
 
 @Module({
