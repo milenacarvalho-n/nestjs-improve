@@ -1,10 +1,11 @@
+/* eslint @typescript-eslint/no-var-requires: "off" */
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Course } from 'src/courses/entities/courses.entity';
 import { Tag } from 'src/courses/entities/tags.entity';
 import { DataSourceOptions } from 'typeorm';
 
-require('dotenv').config()
+require('dotenv').config();
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
