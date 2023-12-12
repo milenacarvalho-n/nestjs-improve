@@ -28,14 +28,14 @@ export class Course {
   })
   tags: Tag[];
 
-  @CreateDateColumn({ type: 'timestamp'})
+  @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
   @BeforeInsert()
-  generatedID(){
-    if(!this.id){
-      this.id = randomUUID()
+  generatedID() {
+    if (!this.id) {
+      this.id = randomUUID();
     }
-    return this.id
+    return this.id;
   }
 }
