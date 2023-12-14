@@ -25,9 +25,9 @@ export class Tag {
 
   @BeforeInsert()
   generatedID() {
-    if (!this.id) {
-      this.id = randomUUID();
+    if (this.id) {
+      return
     }
-    return this.id;
+    this.id = randomUUID()
   }
 }

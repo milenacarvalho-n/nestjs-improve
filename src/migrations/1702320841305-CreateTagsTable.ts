@@ -18,13 +18,7 @@ export class CreateTagsTable1702320841305 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'createdAt',
-            type: 'timestamp',
-            isNullable: false,
-            default: 'CURRENT_TIMESTAMP',
-          },
-          {
-            name: 'updatedAt',
+            name: 'created_at',
             type: 'timestamp',
             isNullable: false,
             default: 'CURRENT_TIMESTAMP',
