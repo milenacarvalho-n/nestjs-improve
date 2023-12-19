@@ -11,13 +11,13 @@ import { randomUUID } from 'node:crypto';
 
 @Entity('tags')
 export class Tag {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
   name: string;
 
-  @ManyToMany(() => Course, (course) => course.tags)
+  @ManyToMany(() => Course, course => course.tags)
   courses: Course[];
 
   @CreateDateColumn({ type: 'timestamp' })
