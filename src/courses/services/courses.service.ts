@@ -12,13 +12,12 @@ import { CreateCourseDTO } from '../dto/create-course-dto';
 import { UpdateCourseDTO } from '../dto/update-course-dto';
 
 @Injectable()
-export class CoursesService {
-  constructor(
+export class CoursesService { 
     @InjectRepository(Course)
-    private readonly courseRepository: Repository<Course>,
+    private readonly courseRepository: Repository<Course>
     @InjectRepository(Tag)
-    private readonly tagRepository: Repository<Tag>,
-  ) {}
+    private readonly tagRepository: Repository<Tag>
+  
 
   async findAll() {
     return await this.courseRepository.find({
