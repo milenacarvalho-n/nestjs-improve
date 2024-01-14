@@ -17,7 +17,7 @@ export class Tag {
   @Column()
   name: string;
 
-  @ManyToMany(() => Course, course => course.tags)
+  @ManyToMany(() => Course, (course) => course.tags)
   courses: Course[];
 
   @CreateDateColumn({ type: 'timestamp' })
@@ -26,8 +26,8 @@ export class Tag {
   @BeforeInsert()
   generatedID() {
     if (this.id) {
-      return
+      return;
     }
-    this.id = randomUUID()
+    this.id = randomUUID();
   }
 }
